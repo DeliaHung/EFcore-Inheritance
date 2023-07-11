@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFcoreInheritance", "EFcoreInheritance\EFcoreInheritance.csproj", "{AD9C135F-0CDF-459B-9AA0-B6988D2ABAF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD9C135F-0CDF-459B-9AA0-B6988D2ABAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9C135F-0CDF-459B-9AA0-B6988D2ABAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9C135F-0CDF-459B-9AA0-B6988D2ABAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9C135F-0CDF-459B-9AA0-B6988D2ABAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CCEDE46-F293-425F-9270-2A28EAFD7A6F}
+	EndGlobalSection
+EndGlobal
