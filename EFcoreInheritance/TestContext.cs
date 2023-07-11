@@ -1,27 +1,26 @@
-﻿using EFcoreInheritance;
+﻿using EFcoreInheritance.Entity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using System.Reflection;
 
-namespace EFcoreConcurrency
-{
-    public class TestContext : DbContext
-    {
-        public DbSet<Hero> Heroes { get; set; }
-        public DbSet<ManaHero> ManaHeroes { get; set; }
-        public DbSet<EnergyHero> EnergyHeroes { get; set; }
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EFInheritance;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False")
-                .LogTo((message) => Console.WriteLine("【TestContext:】" + message + "\r\n"), LogLevel.Information)
-                ;
-        }
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+namespace EFcoreInheritance;
 
-            base.OnModelCreating(builder);
-        }
+public class TestContext : DbContext
+{
+    public DbSet<Animal> Animals { get; set; }
+    public DbSet<Pet> Pets { get; set; }
+    public DbSet<Cat> Cats { get; set; }
+    public DbSet<Dog> Dogs { get; set; }
+    public DbSet<Human> Humans { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        //可準備不同資料庫
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F0J9EK;Initial Catalog=EFInheritanceTPC;Integrated Security=True;TrustServerCertificate=True");
+    }
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+        base.OnModelCreating(builder);
     }
 }
