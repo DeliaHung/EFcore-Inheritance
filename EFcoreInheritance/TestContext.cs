@@ -15,7 +15,7 @@ public class TestContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         //可準備不同資料庫
-        optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F0J9EK;Initial Catalog=EFInheritanceTPC;Integrated Security=True;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F0J9EK;Initial Catalog=EFInheritanceTPH;Integrated Security=True;TrustServerCertificate=True");
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {

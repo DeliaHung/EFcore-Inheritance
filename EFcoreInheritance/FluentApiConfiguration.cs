@@ -10,13 +10,14 @@ public class AnimalConfiguration : IEntityTypeConfiguration<Animal>
     {
         builder.HasKey(t => t.Id);
         builder.Property(t => t.Id).UseIdentityColumn(1, 1);//TPC模式記得拿掉
-        builder.UseTptMappingStrategy();
+        //builder.UseTptMappingStrategy();
 
         //TPT
         //builder.UseTptMappingStrategy();
 
         ////TPH(預設，所以可以不寫)
-        //builder.UseTphMappingStrategy();
+        builder.UseTphMappingStrategy()
+            .HasDiscriminator().IsComplete(false);//如果資料表有不存在Type，使用IsComplete(false)可防止查詢發生錯誤
 
         ////識別器指定Type及Value。
         //builder.HasDiscriminator<int>("AnimalType")
